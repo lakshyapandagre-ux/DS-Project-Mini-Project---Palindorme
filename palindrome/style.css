@@ -1,0 +1,501 @@
+/* Global Reset & Typography */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    /* Very clean light gray/white background */
+    color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Top Navigation / Hero Header */
+.project-header {
+    width: 100%;
+    /* Deep academic gradient (Charcoal Blue -> Deep Slate) */
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle pattern overlay for texture (optional) */
+.project-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Animation: Fade In + Slide Down */
+    opacity: 0;
+    animation: headerFadeIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.project-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #ffffff, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-divider {
+    width: 60px;
+    height: 4px;
+    background: #38bdf8;
+    /* Academic light blue accent */
+    border-radius: 2px;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.project-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #94a3b8;
+    /* Soft slate gray */
+    letter-spacing: 0.5px;
+    opacity: 0;
+    /* Animation delay for subtitle */
+    animation: subtitleFadeIn 1s ease-out 0.3s forwards;
+}
+
+/* Header Animations */
+@keyframes headerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes subtitleFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Submission Details Grid */
+.submission-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+.submission-card {
+    background: #ffffff;
+    padding: 20px 25px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.submission-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+.meta-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #64748b;
+    /* Muted slate */
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.meta-value {
+    font-size: 1rem;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+/* Main Application Card with Animation */
+.app-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+    /* Softer, premium shadow */
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    opacity: 0;
+    /* Star hidden for animation */
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.card-instruction {
+    color: #6b7280;
+    margin-bottom: 35px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Input Section */
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 20px 25px;
+    background-color: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 16px;
+    font-size: 1.15rem;
+    color: #111827;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    text-align: center;
+    font-weight: 500;
+}
+
+input[type="text"]:hover {
+    transform: scale(1.01);
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+input[type="text"]:focus {
+    transform: scale(1.02);
+    background-color: #ffffff;
+    border-color: #111827;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.input-meta {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 10px 0;
+}
+
+#charCount {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.normalization-note {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin-bottom: 30px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 16px 32px;
+    border: none;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.3px;
+}
+
+.btn-primary {
+    background-color: #000000;
+    color: #ffffff;
+    flex: 2;
+}
+
+.btn-primary:hover {
+    background-color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    flex: 1;
+    border: 1px solid #e5e7eb;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Result Section */
+.result-container {
+    margin-top: 35px;
+    padding: 30px;
+    border-radius: 16px;
+    background: transparent;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(10px);
+    display: none;
+    /* Hidden by default */
+}
+
+.result-container.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.result-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.badge-success {
+    background-color: #ecfdf5;
+    color: #047857;
+    border: 1px solid #a7f3d0;
+}
+
+.badge-error {
+    background-color: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+.result-message {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.logic-note {
+    font-size: 0.95rem;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* Student List Styling */
+.student-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.student-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+}
+
+.student-name {
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+.student-roll {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    /* Muted roll number */
+    font-family: 'Inter', monospace;
+    /* Monospace for alignment */
+    font-weight: 500;
+    background: #ffffff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Credit Section (Examiner Focus) */
+.credit-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /* Kept off the very bottom */
+    padding: 12px 35px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 50px;
+    /* Pill shape for modern look */
+    display: inline-block;
+    box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.05);
+
+    /* Animation */
+    opacity: 0;
+    animation: creditFadeIn 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+}
+
+.credit-text {
+    font-size: 0.95rem;
+    color: #64748b;
+    /* Neutral academic gray */
+    margin: 0;
+    font-weight: 500;
+}
+
+.credit-name {
+    color: #0f172a;
+    /* Dark charcoal/black for emphasis */
+    font-weight: 700;
+}
+
+@keyframes creditFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .submission-container {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+        /* Stack on mobile */
+    }
+
+    .student-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .app-card {
+        padding: 30px 20px;
+    }
+
+    .card-heading {
+        font-size: 1.6rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+    }
+}
