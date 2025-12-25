@@ -136,7 +136,7 @@ body {
 /* Layout Grid */
 .content-grid {
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 1fr 350px;
     gap: 2rem;
     align-items: start;
     animation: fadeInUp 0.8s ease-out 0.2s backwards;

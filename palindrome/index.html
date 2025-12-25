@@ -27,7 +27,45 @@
         <!-- Content Grid -->
         <div class="content-grid">
 
-            <!-- Left Column: Info & Details -->
+            <!-- Main Column: The Checker -->
+            <main class="checker-section">
+
+                <div class="glass-card checker-card">
+                    <div class="checker-header">
+                        <h2>Check Text</h2>
+                        <p>Enter your text below to analyze its structure</p>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" id="palindromeInput" placeholder="Type a word or sentence..."
+                            autocomplete="off">
+                        <div class="char-counter">0 characters</div>
+                    </div>
+
+                    <p class="note-text">Spaces and special characters are ignored.</p>
+
+                    <div class="action-buttons">
+                        <button id="checkBtn" class="btn btn-primary">
+                            <span>Check Palindrome</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                        <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                    </div>
+
+                    <!-- Result Section (Hidden by default) -->
+                    <div id="resultCard" class="result-card hidden">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <div class="result-content">
+                            <h3 id="resultTitle"></h3>
+                            <p id="resultMessage"></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+
+            <!-- Sidebar Column: Info & Details -->
             <aside class="info-sidebar">
 
                 <!-- Project Info Card -->
@@ -65,49 +103,12 @@
                     </div>
                     <div class="glass-card detail-card">
                         <span class="detail-label">Submitted To</span>
-                        <h4 class="detail-value">Mr. Ankit Chakrabarty</h4>
+                        <h4 class="detail-value">Dr. Ankit Chakrawarti</h4>
                     </div>
                 </div>
 
             </aside>
 
-            <!-- Right Column: The Checker -->
-            <main class="checker-section">
-
-                <div class="glass-card checker-card">
-                    <div class="checker-header">
-                        <h2>Check Text</h2>
-                        <p>Enter your text below to analyze its structure</p>
-                    </div>
-
-                    <div class="input-group">
-                        <input type="text" id="palindromeInput" placeholder="Type a word or sentence..."
-                            autocomplete="off">
-                        <div class="char-counter">0 characters</div>
-                    </div>
-
-                    <p class="note-text">Spaces and special characters are ignored.</p>
-
-                    <div class="action-buttons">
-                        <button id="checkBtn" class="btn btn-primary">
-                            <span>Check Palindrome</span>
-                            <div class="btn-glow"></div>
-                        </button>
-                        <button id="clearBtn" class="btn btn-secondary">Clear</button>
-                    </div>
-
-                    <!-- Result Section (Hidden by default) -->
-                    <div id="resultCard" class="result-card hidden">
-                        <div class="result-icon" id="resultIcon"></div>
-                        <div class="result-content">
-                            <h3 id="resultTitle"></h3>
-                            <p id="resultMessage"></p>
-                        </div>
-                    </div>
-
-                </div>
-
-            </main>
         </div>
 
         <!-- Footer -->
