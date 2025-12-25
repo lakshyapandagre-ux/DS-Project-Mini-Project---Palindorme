@@ -5,98 +5,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palindrome Checker | Data Structures Project</title>
+
+    <!-- Google Fonts: Outfit for a premium, modern feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-    <!-- Using Google Fonts for a professional academic look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- Premium Hero Header -->
-    <header class="project-header">
-        <div class="header-content">
-            <h1 class="project-title">Palindrome Checker</h1>
-            <div class="header-divider"></div>
-            <p class="project-subtitle">Data Structures Mini Project</p>
-        </div>
-    </header>
-
     <div class="main-container">
 
-        <!-- Project Info / Submission Details -->
-        <div class="submission-container">
-            <!-- Students List (Full Width) -->
-            <div class="submission-card full-width">
-                <span class="meta-label">Submitted By</span>
-                <ul class="student-list">
-                    <li>
-                        <span class="student-name">Lakshya Pandagre</span>
-                        <span class="student-roll">0832CI241075</span>
-                    </li>
-                    <li>
-                        <span class="student-name">Minal Patidar</span>
-                        <span class="student-roll">0832CI241079</span>
-                    </li>
-                    <li>
-                        <span class="student-name">Mahak Verma</span>
-                        <span class="student-roll">0832CI241077</span>
-                    </li>
-                    <li>
-                        <span class="student-name">Mahak Rajput</span>
-                        <span class="student-roll">0832CI241076</span>
-                    </li>
-                    <li>
-                        <span class="student-name">Manisha Lowanshi</span>
-                        <span class="student-roll">0832CI241078</span>
-                    </li>
-                </ul>
-            </div>
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <h1 class="hero-title">PALINDROME CHECKER</h1>
+            <p class="hero-subtitle">Data Structures Mini Project</p>
+        </header>
 
-            <!-- Subject & Faculty (Grid) -->
-            <div class="submission-card">
-                <span class="meta-label">Subject</span>
-                <span class="meta-value">Data Structures</span>
-            </div>
-            <div class="submission-card">
-                <span class="meta-label">Submitted To</span>
-                <span class="meta-value">Mr. Ankit Chakrabarty</span>
-            </div>
-        </div>
+        <!-- Content Grid -->
+        <div class="content-grid">
 
-        <!-- Application Card -->
-        <main class="app-card fade-in-up">
-            <h3 class="card-heading">Check Text</h3>
-            <p class="card-instruction">Enter your text below to analyze its structure.</p>
+            <!-- Left Column: Info & Details -->
+            <aside class="info-sidebar">
 
-            <div class="input-wrapper">
-                <input type="text" id="userInput" placeholder="Type a word or sentence..." autocomplete="off">
-                <div class="input-meta">
-                    <small id="charCount">0 characters</small>
+                <!-- Project Info Card -->
+                <div class="glass-card team-card">
+                    <h3 class="card-header">Submitted By</h3>
+                    <ul class="team-list">
+                        <li class="team-member">
+                            <span class="member-name">Lakshya Pandagre</span>
+                            <span class="member-id">0827CS223T117</span>
+                        </li>
+                        <li class="team-member">
+                            <span class="member-name">Minal Patidar</span>
+                            <span class="member-id">0827CS223T131</span>
+                        </li>
+                        <li class="team-member">
+                            <span class="member-name">Mahak Verma</span>
+                            <span class="member-id">0827CS223T124</span>
+                        </li>
+                        <li class="team-member">
+                            <span class="member-name">Mahak Rajput</span>
+                            <span class="member-id">0827CS223T123</span>
+                        </li>
+                        <li class="team-member">
+                            <span class="member-name">Manisha Lowanshi</span>
+                            <span class="member-id">0827CS223T126</span>
+                        </li>
+                    </ul>
                 </div>
-            </div>
 
-            <p class="normalization-note">
-                Note: Spaces and special characters are ignored during palindrome checking.
-            </p>
+                <!-- Subject & Faculty Cards -->
+                <div class="details-grid">
+                    <div class="glass-card detail-card">
+                        <span class="detail-label">Subject</span>
+                        <h4 class="detail-value">Data Structures</h4>
+                    </div>
+                    <div class="glass-card detail-card">
+                        <span class="detail-label">Submitted To</span>
+                        <h4 class="detail-value">Mr. Ankit Chakrabarty</h4>
+                    </div>
+                </div>
 
-            <div class="button-group">
-                <button id="checkBtn" type="button" class="btn-primary">Check Palindrome</button>
-                <button id="clearBtn" type="button" class="btn-secondary">Clear</button>
-            </div>
+            </aside>
 
-            <!-- Result Display -->
-            <div id="resultContainer" class="result-container hidden">
-                <div id="resultBadge" class="result-badge"></div>
-                <p id="resultMessage" class="result-message"></p>
-                <p id="logicExplanation" class="logic-note"></p>
-            </div>
-        </main>
+            <!-- Right Column: The Checker -->
+            <main class="checker-section">
 
+                <div class="glass-card checker-card">
+                    <div class="checker-header">
+                        <h2>Check Text</h2>
+                        <p>Enter your text below to analyze its structure</p>
+                    </div>
 
-        <!-- Dedicated Credit Section -->
-        <div class="credit-section">
-            <p class="credit-text">Made by <span class="credit-name">Lakshya Pandagre</span></p>
+                    <div class="input-group">
+                        <input type="text" id="palindromeInput" placeholder="Type a word or sentence..."
+                            autocomplete="off">
+                        <div class="char-counter">0 characters</div>
+                    </div>
+
+                    <p class="note-text">Spaces and special characters are ignored.</p>
+
+                    <div class="action-buttons">
+                        <button id="checkBtn" class="btn btn-primary">
+                            <span>Check Palindrome</span>
+                            <div class="btn-glow"></div>
+                        </button>
+                        <button id="clearBtn" class="btn btn-secondary">Clear</button>
+                    </div>
+
+                    <!-- Result Section (Hidden by default) -->
+                    <div id="resultCard" class="result-card hidden">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <div class="result-content">
+                            <h3 id="resultTitle"></h3>
+                            <p id="resultMessage"></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
         </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-pill">
+                Made by <strong>Lakshya Pandagre</strong>
+            </div>
+        </footer>
 
     </div>
 
